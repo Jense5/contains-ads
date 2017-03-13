@@ -1,6 +1,6 @@
 {
   "name": "is-ad",
-  "version": "0.0.0-dev.0",
+  "version": "0.0.1",
   "description": "Function to check if a request is an ad",
   "repository": "https://github.com/Jense5/is-ad.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
