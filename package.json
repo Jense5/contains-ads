@@ -5,8 +5,13 @@
   "repository": "https://github.com/Jense5/is-ad.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
   "license": "MPL",
-  "keywords": [ "is-ad" ],
-  "files": [ "dist", "README.md" ],
+  "keywords": [
+    "is-ad"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "main": "./dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -23,6 +28,7 @@
     "pre-publish": "npm run build"
   },
   "dependencies": {
+    "ad-block": "^2.0.1",
     "chalk": "^1.1.3",
     "winston": "^2.3.0"
   },
