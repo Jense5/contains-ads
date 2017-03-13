@@ -1,63 +1,27 @@
 
-<h1 align="center">isAd?</h1>
+# isAd?
 
-<p align="center">
-  <img src="https://image.flaticon.com/icons/svg/0/61.svg" width="150">
-</p>
-
-<h3 align="center" style="font-family:monospace">DEVELOPERS ONLY</h3>
-
-### Default scripts
+**Check if a request is an add.**  
+You can use this. You should not. In development.  
+I will add more lists later this week.
 
 ```sh
-$ npm install           # Install dependencies 
-$ npm run build         # Build the source
-$ npm run build:watch   # Watch the build
-$ npm run test          # Run the tests
-$ npm run test:watch    # Watch the tests
-$ npm run cover         # Run the tests with coverage
-$ npm run cover:check   # Check if there is enough coverage
-$ npm run cover:report  # Push coverage report to codecov
-```
-
-### Setup Automated Releases
-
-```sh
-# Install the tools
-$ npm install -g semantic-release-cli
-$ npm install --save commitizen cz-conventional-changelog
-$ semantic-release-cli setup
-```
-
-```yml
-# Add script to Travis (replaces prepublish) and enable on the website
-# Also enable codecov for coverage
-branches:
-  only:
-    - master
-script:
-  - npm run cover
-  - npm run build
-after_success:
-  - npm run cover:report
+$ npm install --save is-ad
 ```
 
 ```js
-// Update package.json with bins
-{
-  "scripts": { "commit": "git-cz" },
-  "czConfig": { "path": "node_modules/cz-conventional-changelog" }
-}
-```
+import { initialize, isAd } from 'is-ad';
 
-```sh
-# You can now commit with automated releases
-$ git add .
-$ npm run commit
-```
+// Initializes in less then 0.014s. Don't worry.
+initialize().then(() => {
 
-<br />
-<p align="center">
-  <a href="https://js.org" target="_blank" title="JS.ORG | JavaScript Community">
-  <img src="https://logo.js.org/dark_horz.png" width="102" alt="JS.ORG Logo"/></a>
-</p>
+  // Detect simple ad requests.
+  isAd('http://www.blabal.com&ad_type_'); // True
+  isAd('http://www.twitter.com');         // False
+
+  // Add base url of the site that requests the url for extra precision.
+  isAd('http://www.blabal.com&ad_type_', 'blabal.com');   // True
+  isAd('http://www.twitter.com', 'twitter.com');          // False
+
+});
+```
