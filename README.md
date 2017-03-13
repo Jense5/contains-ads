@@ -1,7 +1,7 @@
 
 # isAd?
 
-**Check if a request is an add.**  
+**Check if a request is an ad.**  
 You can use this. You should not. In development.  
 I will add more lists later this week.
 
