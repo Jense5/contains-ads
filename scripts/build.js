@@ -2,7 +2,8 @@ const { AdBlockClient } = require('ad-block'); // eslint-disable-line
 const path = require('path');
 const fs = require('fs');
 
-fs.readFile('blocked.txt', 'utf8', (error, data) => {
+const input = path.resolve(__dirname, './blocked.txt');
+fs.readFile(input, 'utf8', (error, data) => {
   if (error) { console.log(error); }
 
   console.log('Parsing...');
