@@ -12,7 +12,7 @@ $ npm install --save is-ad
 ```js
 import { initialize, isAd } from 'is-ad';
 
-// Initializes in less then 0.014s. Don't worry.
+// Initializes in less than 0.014s. Don't worry.
 initialize().then(() => {
 
   // Detect simple ad requests.
