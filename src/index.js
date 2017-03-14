@@ -6,7 +6,7 @@ import path from 'path';
 // $FlowFixMe: Can't find ad-block... whatever.
 import { AdBlockClient, FilterOptions } from 'ad-block'; // eslint-disable-line
 
-const client = new AdBlockClient();
+export const client = new AdBlockClient();
 
 export const initialize = () =>
   new Promise((resolve, fail) => {

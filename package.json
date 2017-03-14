@@ -1,6 +1,6 @@
 {
   "name": "is-ad",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Function to check if a request is an ad",
   "repository": "https://github.com/Jense5/is-ad.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
@@ -26,7 +26,7 @@
     "cover": "nyc npm run test",
     "cover:check": "nyc check-coverage --statements 80 --branches 80 --functions 80 --lines 80",
     "cover:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "pre-publish": "npm run parse && npm run build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "ad-block": "^2.0.1",

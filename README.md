@@ -10,7 +10,7 @@ $ npm install --save is-ad
 ```
 
 ```js
-import { initialize, isAd } from 'is-ad';
+import { initialize, isAd, client } from 'is-ad';
 
 // Initializes in less than 0.014s. Don't worry.
 initialize().then(() => {
@@ -24,4 +24,11 @@ initialize().then(() => {
   isAd('http://www.twitter.com', 'twitter.com');          // False
 
 });
+
+// You can also use the client to provide custom rules as described in the brave ad-block.
+// (https://github.com/brave/ad-block) For example, blacklist a website:
+client.parse('||blacklistwebsite.com')
+// Check this page for rule info: https://adblockplus.org/filters.
+// This means you can also whitelist a website:
+client.parse('@@||whitelistwebsite.com');
 ```
