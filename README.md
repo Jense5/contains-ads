@@ -37,7 +37,7 @@ initialize().then(() => {
 
 ### Development
 
-```py
+```
 # Run tests with mocha.
 $ yarn test
 
