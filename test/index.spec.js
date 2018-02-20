@@ -1,24 +1,28 @@
-import { expect } from 'chai';
-import { tic, toc } from 'tic-toc';
-import { initialize, isAd, client } from '../src/index';
+const { expect } = require('chai');
+const { initialize, client, isAd, containsAd } = require('../source');
 
 describe('Default tests', () => {
   it('should detect ad', (done) => {
-    tic();
     initialize().then(() => {
-      toc();
       expect(isAd('http://www.blabal.com&ad_type_')).to.equal(true);
       done();
     }).catch(done);
   });
-  it('should not detect twitter', (done) => {
-    tic();
+  
+  it('should detect ad with new api', (done) => {
     initialize().then(() => {
-      toc();
+      expect(containsAd('http://www.blabal.com&ad_type_')).to.equal(true);
+      done();
+    }).catch(done);
+  });
+  
+  it('should not detect twitter', (done) => {
+    initialize().then(() => {
       expect(isAd('http://www.twitter.com')).to.equal(false);
       done();
     }).catch(done);
   });
+
   it('should return and edit client', () => {
     expect(!!client).to.equal(true);
     client.parse('||someEvilSite.com');
