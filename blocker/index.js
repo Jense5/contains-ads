@@ -4,7 +4,7 @@ const winston = require('winston');
 const Blocker = require('ad-block');
 
 const input = path.resolve(__dirname, 'blocked.txt');
-const output = path.resolve(__dirname, '../src/detector.buffer');
+const output = path.resolve(__dirname, '../source/detector.buffer');
 
 winston.info('Reading ' + input + '.');
 fs.readFile(input, 'utf8', (error, data) => {
@@ -17,6 +17,6 @@ fs.readFile(input, 'utf8', (error, data) => {
   winston.info('Created buffer.');
   fs.writeFile(output, client.serialize(64), (err) => {
     if (err) { winston.error(err); }
-    winston.info('Wrote buffer to src/detector.buffer!');
+    winston.info('Wrote buffer to source/detector.buffer!');
   });
 });
