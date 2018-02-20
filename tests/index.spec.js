@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { initialize, client, isAd, containsAd } = require('../source');
+const { initialize, client, isAd, containsAds } = require('../source');
 
 describe('Default tests', () => {
   it('should detect ad', (done) => {
@@ -11,7 +11,7 @@ describe('Default tests', () => {
   
   it('should detect ad with new api', (done) => {
     initialize().then(() => {
-      expect(containsAd('http://www.blabal.com&ad_type_')).to.equal(true);
+      expect(containsAds('http://www.blabal.com&ad_type_')).to.equal(true);
       done();
     }).catch(done);
   });

@@ -2,7 +2,7 @@
   "name": "is-ad",
   "version": "0.1.0",
   "description": "Function to check if a url contains an ad or not.",
-  "repository": "https://github.com/Jense5/contains-ad.git",
+  "repository": "https://github.com/Jense5/contains-ads.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
   "license": "MPL",
   "keywords": ["contains-ad", "ad-block", "is-ad", "check", "ad"],

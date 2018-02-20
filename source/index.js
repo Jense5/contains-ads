@@ -16,5 +16,5 @@ module.exports.initialize = () => new Promise((resolve, reject) => {
 
 const none = Blocker.FilterOptions.noFilterOption;
 const isAd = (req, base) => client.matches(req, none, base);
-module.exports.containsAd = (req, base) => isAd(req, base);
+module.exports.containsAds = (req, base) => isAd(req, base);
 module.exports.isAd = isAd;
