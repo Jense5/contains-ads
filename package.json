@@ -19,7 +19,7 @@
   "main": "./source/index.js",
   "scripts": {
     "test": "mocha tests",
-    "build:detector": "node build",
+    "build:detector": "node blocker",
     "prepublish": "npm run build:detector"
   },
   "dependencies": {
