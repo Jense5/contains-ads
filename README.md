@@ -1,34 +1,46 @@
+# contains-ad
 
-# isAd?
-
-**Check if a request is an ad.**  
-You can use this. You should not. In development.  
-I will add more lists later this week.
+Function to check if a url contains an ad or not.
 
 ```sh
-$ npm install --save is-ad
+$ yarn add contains-ad
 ```
 
+### Basic Example
+
 ```js
-import { initialize, isAd, client } from 'is-ad';
+import { initialize, containsAd } from 'is-ad';
 
-// Initializes in less than 0.014s. Don't worry.
+// Optionally pass the current url for extra precision.
 initialize().then(() => {
-
-  // Detect simple ad requests.
-  isAd('http://www.blabal.com&ad_type_'); // True
-  isAd('http://www.twitter.com');         // False
-
-  // Add base url of the site that requests the url for extra precision.
-  isAd('http://www.blabal.com&ad_type_', 'blabal.com');   // True
-  isAd('http://www.twitter.com', 'twitter.com');          // False
-
+  containsAd('http://www.twitter.com');                         // False
+  containsAd('http://www.blabal.com&ad_type_');                 // True
+  containsAd('http://www.blabal.com&ad_type_', 'sample.com');   // True
 });
+```
 
-// You can also use the client to provide custom rules as described in the brave ad-block.
-// (https://github.com/brave/ad-block) For example, blacklist a website:
+### Advanced Example
+
+```js
+import { initialize, containsAd, client } from 'is-ad';
+
+// You can also parse custom rules. Check the adblock plus docs
+// for more information (https://adblockplus.org/filters).
 client.parse('||blacklistwebsite.com')
-// Check this page for rule info: https://adblockplus.org/filters.
-// This means you can also whitelist a website:
 client.parse('@@||whitelistwebsite.com');
+
+initialize().then(() => {
+  containsAd('http://www.blacklistwebsite.com');    // True
+  containsAd('http://www.whitelistwebsite.com');    // False
+});
+```
+
+### Development
+
+```py
+# Run tests with mocha.
+$ yarn test
+
+# Rebuild the blocker/blocked.txt to a buffer.
+$ yarn build:detector
 ```
