@@ -1,6 +1,6 @@
 # Contains Ads
 
-Function to check if a url contains an ad or not.
+Function to check if a url contains ads or not.
 
 ```sh
 $ yarn add contains-ads
