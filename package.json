@@ -1,12 +1,21 @@
 {
   "name": "is-ad",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Function to check if a url contains ads or not.",
   "repository": "https://github.com/Jense5/contains-ads.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
   "license": "MPL",
-  "keywords": ["contains-ad", "ad-block", "is-ad", "check", "ad"],
-  "files": ["source", "README.md"],
+  "keywords": [
+    "contains-ad",
+    "ad-block",
+    "is-ad",
+    "check",
+    "ad"
+  ],
+  "files": [
+    "source",
+    "README.md"
+  ],
   "main": "./source/index.js",
   "scripts": {
     "test": "mocha tests",
