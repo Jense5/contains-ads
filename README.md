@@ -9,7 +9,7 @@ $ yarn add contains-ads
 ### Basic Example
 
 ```js
-import { initialize, containsAds } from 'is-ad';
+import { initialize, containsAds } from 'contains-ads';
 
 // Optionally pass the current url for extra precision.
 initialize().then(() => {
@@ -22,7 +22,7 @@ initialize().then(() => {
 ### Advanced Example
 
 ```js
-import { initialize, containsAds, client } from 'is-ad';
+import { initialize, containsAds, client } from 'contains-ads';
 
 // You can also parse custom rules. Check the adblock plus docs
 // for more information (https://adblockplus.org/filters).

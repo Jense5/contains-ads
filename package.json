@@ -1,6 +1,6 @@
 {
-  "name": "is-ad",
-  "version": "0.2.0",
+  "name": "contains-ads",
+  "version": "0.2.1",
   "description": "Function to check if a url contains ads or not.",
   "repository": "https://github.com/Jense5/contains-ads.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
