@@ -15,8 +15,8 @@ client.parse('||blacklistwebsite.com')
 client.parse('@@||whitelistwebsite.com');
 
 initialize().then(() => {
-  containsAds('http://www.twitter.com');                         // False
-  containsAds('http://www.blabal.com&ad_type_');                 // True
+  containsAds('http://www.twitter.com');          // False
+  containsAds('http://www.blabal.com&ad_type_');  // True
 });
 ```
 
