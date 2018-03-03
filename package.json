@@ -21,7 +21,7 @@
     "test": "mocha tests",
     "build": "node blocker",
     "postupdate": "node blocker",
-    "prepublish": "npm run build",
+    "prepublish": "npm run update",
     "update": "rm blocker/blocked.txt && curl https://easylist.to/easylist/easylist.txt -o blocker/blocked.txt"
   },
   "dependencies": {
