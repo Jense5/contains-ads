@@ -1,7 +1,7 @@
 {
   "name": "contains-ads",
   "version": "0.2.2",
-  "description": "Check if a url contains ads or not",
+  "description": "Checks if the specified url contains advertisements",
   "repository": "https://github.com/Jense5/contains-ads.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
   "license": "MPL",
