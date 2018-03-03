@@ -1,46 +1,28 @@
 # Contains Ads
 
-Function to check if a url contains ads or not.
+Checks if the specified url contains advertisements.
 
 ```sh
 $ yarn add contains-ads
 ```
 
-### Basic Example
-
 ```js
-import { initialize, containsAds } from 'contains-ads';
+const { client, initialize, containsAds } = require('contains-ads');
 
-// Optionally pass the current url for extra precision.
-initialize().then(() => {
-  containsAds('http://www.twitter.com');                         // False
-  containsAds('http://www.blabal.com&ad_type_');                 // True
-  containsAds('http://www.blabal.com&ad_type_', 'sample.com');   // True
-});
-```
-
-### Advanced Example
-
-```js
-import { initialize, containsAds, client } from 'contains-ads';
-
-// You can also parse custom rules. Check the adblock plus docs
-// for more information (https://adblockplus.org/filters).
+// Easylist is the used by default, but you can add custom rules.
+// Visit abp for more information (https://adblockplus.org/filters).
 client.parse('||blacklistwebsite.com')
 client.parse('@@||whitelistwebsite.com');
 
 initialize().then(() => {
-  containsAds('http://www.blacklistwebsite.com');    // True
-  containsAds('http://www.whitelistwebsite.com');    // False
+  containsAds('http://www.twitter.com');                         // False
+  containsAds('http://www.blabal.com&ad_type_');                 // True
 });
 ```
 
-### Development
-
 ```
-# Run tests with mocha.
-$ yarn test
-
-# Rebuild the blocker/blocked.txt to a buffer.
-$ yarn build:detector
+# Development commands -
+$ yarn test     # Runs the tests
+$ yarn build    # Parses the list of blocked sites
+$ yarn update   # Updates the list of blocked sites
 ```
