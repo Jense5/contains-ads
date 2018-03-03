@@ -20,7 +20,9 @@
   "scripts": {
     "test": "mocha tests",
     "build": "node blocker",
-    "prepublish": "npm run build"
+    "postupdate": "node blocker",
+    "prepublish": "npm run build",
+    "update": "rm blocker/blocked.txt && curl https://easylist.to/easylist/easylist.txt -o blocker/blocked.txt"
   },
   "dependencies": {
     "ad-block": "^2.0.1"
