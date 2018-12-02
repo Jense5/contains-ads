@@ -25,11 +25,11 @@
     "update": "rm blocker/blocked.txt && curl https://easylist.to/easylist/easylist.txt -o blocker/blocked.txt"
   },
   "dependencies": {
-    "ad-block": "^2.0.1"
+    "ad-block": "^4.1.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "winston": "^2.3.0"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "winston": "^3.1.0"
   }
 }
